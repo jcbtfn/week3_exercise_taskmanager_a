@@ -2,7 +2,8 @@ require "task_manager_beta"
 
 RSpec.describe "task manager class and its methods" do
 
-    context "testing add method, we pass an empty string" do
+    context "testing the different methods, we need to initialize the object we
+    are creating to work with it" do
         task = TaskManager.new()
 
         it "returns an error message when input is empty" do

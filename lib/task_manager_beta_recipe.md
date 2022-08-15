@@ -16,7 +16,7 @@ Include the initializer and public methods with all parameters and return values
 class TaskManager
 
     def initialize
-        we initialize a list (instance variable), in this case a hash
+        we initialize a list (instance variable), in this case an array
     end
 
     def add (string)
@@ -74,7 +74,7 @@ task.addtask("Repair the bathroom tap") => ["Hoover the floor", "Repair the bath
 task.completed("20") => "No task/entry for this value, please check again."
 
 # 12
-task.completed(nil, "Repair the bathroom tap" => (["Hoover the floor"])
+task.completed (nil, "Repair the bathroom tap") => (["Hoover the floor"])
 
 # 13
 task.completed(nil, "Bailar una jota" => "No task/entry for this value/task, please check again."
