@@ -27,7 +27,7 @@ class TaskManager
         return the list of tasks
     end
     
-    def completed (number (integer) of entry on the list)
+    def completed (number (integer) of entry on the list) + update : takes string to match tasks
         deleted the task from the list
     end
 
@@ -72,6 +72,15 @@ task.addtask("Repair the bathroom tap") => ["Hoover the floor", "Repair the bath
 
 # 11
 task.completed("20") => "No task/entry for this value, please check again."
+
+# 12
+task.completed(nil, "Repair the bathroom tap" => (["Hoover the floor"])
+
+# 13
+task.completed(nil, "Bailar una jota" => "No task/entry for this value/task, please check again."
+
+# 14
+task.completed(nil, "Hoover the floor") => "The list of tasks is empty."
 
 4. Implement the Behaviour
 After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
