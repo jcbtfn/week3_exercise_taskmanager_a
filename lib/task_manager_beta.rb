@@ -19,11 +19,13 @@ class TaskManager
         return @list.each_index {|i| puts "Task " + (i + 1).to_s + ": " + @list[i]}
     end
 
-    def completed (tasknum)
-        if @list[tasknum.to_i - 1] != nil
-            @list.delete_at(tasknum.to_i)
+    def completed (tasknum = nil, task = "")
+        if ((@list[tasknum.to_i - 1] != nil) && tasknum != nil)
+            return @list.delete_at(tasknum.to_i)
+        elsif @list.include?(task)
+            return @list.delete(task)
         else
-            return "No task/entry for this value, please check again."
+            return "No task/entry for this value/task, please check again."
         end
     end
 

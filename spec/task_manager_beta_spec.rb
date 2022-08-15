@@ -52,7 +52,21 @@ RSpec.describe "task manager class and its methods" do
         end
 
         it "returns an error when an incorrect value is given for delete" do
-            expect(task.completed("20")).to eq ("No task/entry for this value, please check again.")
+            expect(task.completed("20")).to eq ("No task/entry for this value/task, please check again.")
+        end
+
+        it "deletes a task when receiving the task, example: Repair the bathroom tap" do
+            task.completed(nil, "Repair the bathroom tap")
+            expect(task.tasklist).to eq (["Hoover the floor"])
+        end
+
+        it "returns an error when an incorrect value is given for delete" do
+            expect(task.completed(nil, "Bailar una jota")).to eq ("No task/entry for this value/task, please check again.")
+        end
+
+        it "deletes a task when receiving the task, example: Hoover the floor" do
+            task.completed(nil, "Hoover the floor")
+            expect(task.tasklist).to eq ("The list of tasks is empty.")
         end
 
     end
